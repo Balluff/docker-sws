@@ -7,7 +7,7 @@ services:
       - webnet
 
   web:
-    build: webserver
+    build: .
     networks:
       - webnet
 

@@ -1,7 +1,8 @@
 version: "3"
 services:
+
   web:
-    build: webserver
+    build: .
     ports:
       - "8080:3000"
     networks:
