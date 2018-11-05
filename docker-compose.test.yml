@@ -1,8 +1,15 @@
-sut:
-  build: .
-  dockerfile: Dockerfile.test
-  links:
-    - web
-web:
-  build: .
-  dockerfile: Dockerfile
+version: "3"
+services:
+
+  sut:
+    build: healthcheck
+    networks:
+      - webnet
+
+  web:
+    build: webserver
+    networks:
+      - webnet
+
+networks:
+  webnet:

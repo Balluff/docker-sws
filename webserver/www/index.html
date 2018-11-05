@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="LmApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Balluff</title>
+
+  <link rel="stylesheet" href="css/balluff.css" />
+  <link rel="stylesheet" href="css/ui-bootstrap-csp.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div id="header" class="ng-scope">
+		<nav class="navbar navbar-default balluff-layout ng-scope">
+		  <div class="container">
+			<div class="navbar-header">
+			  <div class="container-fluid">
+				<div class="navbar-brand balluff-header-content">
+				  <div class="navbar-left balluff-navbar-logo" id="balluffNavbarLogo">
+					<p>
+					  <img src="images/balluff.svg" alt="Balluff Logo">
+					</p>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="collapse navbar-collapse balluff-navbar-content" id="balluffNavbarContent">
+			  <div class="navbar-right text-nowrap balluff-etid-name hidden-xs">
+				<span id="product-desc" class="bf-product-desc">Main</span>
+			  </div>
+			</div>
+		  </div>
+		</nav>
+	</div>
+
+	<!-- Dynamic Content -->
+	<div ng-view class="container">
+		<h3>Simple Webserver</h3>
+		<p>Thank you for using our Simple Webserver example!</p>
+		<a href="https://www.balluff.com" target="_blank">https://www.balluff.com</a>
+	</div>
+</body>
+
+</html>
