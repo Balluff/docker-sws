@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Wait some seconds
-sleep 5
-
 # Use curl to connect to the local webserver inside the container's network.
 # Search for the content inside the index.html.
 if curl http://web:3000/index.html | grep "<h3>Simple Webserver</h3>"; then

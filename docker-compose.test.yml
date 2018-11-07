@@ -3,6 +3,8 @@ services:
 
   sut:
     build: healthcheck
+    depends_on:
+      - web
     networks:
       - webnet
 
