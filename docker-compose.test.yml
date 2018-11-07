@@ -2,7 +2,7 @@ version: "3"
 services:
 
   sut:
-    build: healthcheck
+    build: ci_build_test
     depends_on:
       - web
     networks:
