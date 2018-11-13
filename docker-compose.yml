@@ -3,8 +3,6 @@ services:
 
   web:
     build: .
-    restart_policy:
-        condition: on-failure
     ports:
       - "8080:3000"
     networks:

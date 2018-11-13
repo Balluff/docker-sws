@@ -7,7 +7,7 @@ LABEL Maintainer "Andreas Elser"
 LABEL Version "0.1"
 LABEL Name "Balluff Simple Webserver"
 
-# Update packages, install lighttpd and clean apt
+# Update packages, install lighttpd
 RUN apk --no-cache --no-progress upgrade
 RUN apk --no-cache --no-progress add lighttpd
 
