@@ -5,6 +5,7 @@ FROM alpine:3.8
 # Some information
 LABEL Maintainer "Andreas Elser"
 LABEL Version "0.1"
+LABEL Vendor "Balluff"
 LABEL Name "Balluff Simple Webserver"
 
 # Update packages, install lighttpd
@@ -21,7 +22,7 @@ EXPOSE 3000
 ADD webserver/www/ /var/www/localhost/htdocs/
 
 # Provide the following volumes for later usage
-VOLUME /var/www/localhost/
+VOLUME /var/www/localhost/htdocs/
 VOLUME /etc/lighttpd/
 
 # Create a new user and set some permissions

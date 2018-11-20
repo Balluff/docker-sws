@@ -5,6 +5,8 @@ services:
     build: .
     ports:
       - "8080:3000"
+    volumes:
+      - ./webserver/www/:/var/www/localhost/htdocs/
     networks:
       - webnet
 
