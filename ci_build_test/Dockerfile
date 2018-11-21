@@ -4,9 +4,11 @@ FROM alpine:3.8
 # Some information
 LABEL Maintainer "Andreas Elser"
 LABEL Version "0.1"
+LABEL Vendor "Balluff"
 LABEL Name "Balluff Simple Webserver Healthchecker"
 
 # Install curl
+RUN apk --no-cache upgrade
 RUN apk add --no-cache curl
 
 # Change the work directory

@@ -1,4 +1,9 @@
 version: "3"
+
+networks:
+  webnet:
+    driver: bridge
+
 services:
 
   sut:
@@ -12,6 +17,3 @@ services:
     build: .
     networks:
       - webnet
-
-networks:
-  webnet:

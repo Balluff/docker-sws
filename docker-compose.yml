@@ -1,14 +1,16 @@
 version: "3"
+
+networks:
+  webnet:
+    driver: bridge
+
 services:
 
   web:
-    build: .
+    image: balluff/simplewebserver
     ports:
       - "8080:3000"
     volumes:
       - ./webserver/www/:/var/www/localhost/htdocs/
     networks:
       - webnet
-
-networks:
-  webnet:

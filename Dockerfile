@@ -9,8 +9,8 @@ LABEL Vendor "Balluff"
 LABEL Name "Balluff Simple Webserver"
 
 # Update packages, install lighttpd
-RUN apk --no-cache --no-progress upgrade
-RUN apk --no-cache --no-progress add lighttpd
+RUN apk --no-cache upgrade
+RUN apk --no-cache add lighttpd
 
 # Copy the lighttpd configuration files
 ADD webserver/etc/lighttpd/* /etc/lighttpd/
