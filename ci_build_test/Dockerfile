@@ -3,7 +3,7 @@ FROM alpine:3.8
 
 # Some information
 LABEL Maintainer "Andreas Elser"
-LABEL Version "0.1"
+LABEL Version "1.0"
 LABEL Vendor "Balluff"
 LABEL Name "Balluff Simple Webserver Healthchecker"
 

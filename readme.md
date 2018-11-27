@@ -2,7 +2,7 @@
 
 On this project we provide a simple but powerful webserver in a small and fast container image.
 
-Also this project is to test the integration between Github and the [docker cloud](https://cloud.docker.com) for automated building and testing after git push.
+Also this project is to test the integration between Github and the [Docker Cloud](https://cloud.docker.com) for automated building and testing after git push.
 
 ## References
 
@@ -45,7 +45,7 @@ $ docker run --name web_test -d --rm -v HTML_FROM_HOST:/var/www/localhost/htdocs
 
 You can also use Docker Compose to start the web service. For this download the compose file from the Github project site or copy-paste the following content into a new `docker-compose.yml`.
 
-```docker
+```yml
 version: "3"
 
 networks:
@@ -71,7 +71,7 @@ Start the service with `docker-compose up -d`.
 You can also rebuild the container image for your own usage. To do this there are 2 possible options:
 - Edit the `docker-compose.yml` file and set the build instruction instead of the image from Docker Hub:
 
-  ```docker
+  ```yml
   ...
   services:
 
@@ -110,5 +110,3 @@ The following picture shows the project file structure, architecture and the Git
 ## Continous Integration Pipeline with Docker Cloud
 
 To optimize the CI pipeline for the container image builds you can use various build providers. Because Docker provides us the [Docker Cloud](https://cloud.docker.com) we can use it to automatically test and create container images.
-
-tbd
