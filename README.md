@@ -85,6 +85,7 @@ You can also rebuild the container image for your own usage. To do this there ar
   ```
 
   You can then build the image and run the service via `docker-compose build` or to build the service and start it after that via `docker-compose up -d --build`.
+  Stopping the service can be done via `docker-compose down`.
 
 ## Continous Integration Pipeline with Docker Cloud
 
@@ -113,6 +114,9 @@ docker-compose -f docker-compose.test.yml up
 
 # Build and run the service with one command
 docker-compose -f docker-compose.test.yml up --build
+
+# Stopping the service and clean-up the resources
+docker-compose -f docker-compose.test.yml down
 ```
 
 Have a look inside the docker log for the test result:
@@ -175,4 +179,5 @@ services:
 ## Architecture
 
 The following architecture shows the project file structure, processes and the Github account linking to Docker Hub/Cloud.
+
 ![docker testing github docker cloud](https://raw.githubusercontent.com/Balluff/docker-sws/master/architecture/docker_testing_github_docker_cloud.png)
