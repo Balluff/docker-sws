@@ -1,19 +1,49 @@
 version: "3"
 
+#########################################################
+####               Simple Web Server                 ####
+#########################################################
+
+#########################################################
+####                   Networking                    ####
+#########################################################
 networks:
   webnet:
     driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 171.5.0.0/24
 
+#########################################################
+####                   Volumes                       ####
+#########################################################
+volumes:
+  web_data: {}
+
+#########################################################
+####                   Services                      ####
+#########################################################
 services:
 
   sut:
-    build: ci_build_test
+    build: test
+    container_name: sws_sut
     depends_on:
       - web
+    volumes:
+      - web_data:/tmp/
     networks:
-      - webnet
+      webnet:
+        ipv4_address: 171.5.0.20
 
   web:
-    build: .
+    build: x86_64
+    container_name: sws
+    volumes:
+      - web_data:/var/www/localhost/htdocs/:ro
+    expose:
+      - 3000
     networks:
-      - webnet
+      webnet:
+        ipv4_address: 171.5.0.10

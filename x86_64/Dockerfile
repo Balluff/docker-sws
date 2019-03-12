@@ -7,19 +7,18 @@ LABEL Maintainer "Andreas Elser"
 LABEL Version "1.0"
 LABEL Vendor "Balluff"
 LABEL Name "Balluff Simple Webserver"
+LABEL Architecture "x86_64"
 
 # Update packages, install lighttpd
-RUN apk --no-cache upgrade
-RUN apk --no-cache add lighttpd
+RUN apk update && apk upgrade
+RUN apk add lighttpd \
+        && rm -rf /var/cache/apk/* /tmp/*
 
 # Copy the lighttpd configuration files
-ADD webserver/etc/lighttpd/* /etc/lighttpd/
-
-# Open port 3000 on container start because of user context ports > 1024 can be used
-EXPOSE 3000
+ADD etc/lighttpd/* /etc/lighttpd/
 
 # Copy the HTML project files
-ADD webserver/www/ /var/www/localhost/htdocs/
+ADD var/www/localhost/htdocs/ /var/www/localhost/htdocs/
 
 # Provide the following volumes for later usage
 VOLUME /var/www/localhost/htdocs/
@@ -29,6 +28,9 @@ VOLUME /etc/lighttpd/
 RUN chown -R lighttpd /var/log/lighttpd
 RUN touch /var/run/lighttpd.pid
 RUN chown lighttpd /var/run/lighttpd.pid
+
+# Open port 3000 on container start because of user context ports > 1024 can be used
+EXPOSE 3000
 
 # Use the new created user
 USER lighttpd
