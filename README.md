@@ -104,11 +104,12 @@ We use the [HTML validator application](https://github.com/zrrrzzt/html-validato
 If were there errors the validator app returns exit code 1 and the automatic build process will stop on the Docker Cloud platform.
 After that we can resolve the mistakes and re-run the service again.
 
-But first we to build and run the tests like the following scenarios:
+But first we need to build and run the tests like the following scenarios:
 
 ```sh
 # Build the container
 docker-compose -f docker-compose.test.yml build
+
 # Run the service (use "-d" to run it in the background)
 docker-compose -f docker-compose.test.yml up
 
